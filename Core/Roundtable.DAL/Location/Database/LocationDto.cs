@@ -11,8 +11,8 @@ namespace Roundtable.DAL.Location.Database
     [Table(Name = "Locations")]
     public class LocationDto: ILocation
     {
-        [Column(IsPrimaryKey = true)]
-        public Guid Id { get; set; }
+        [Column(IsPrimaryKey = true, Name = "Id")]
+        public Guid LocationId { get; set; }
 
         [Column]
         public string Name { get; set; }

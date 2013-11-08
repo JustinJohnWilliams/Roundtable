@@ -31,11 +31,11 @@ namespace Roundtable.DAL.Location
         {
             using (var db = new RtDataContext(_connectionString))
             {
-                var locationDto = db.Locations.FirstOrDefault(l => l.Id == location.Id);
+                var locationDto = db.Locations.FirstOrDefault(l => l.LocationId == location.LocationId);
 
-                if (locationDto == null || location.Id == Guid.Empty)
+                if (locationDto == null || location.LocationId == Guid.Empty)
                 {
-                    locationDto = new LocationDto() { Id = Guid.NewGuid() } ;
+                    locationDto = new LocationDto() { LocationId = Guid.NewGuid() } ;
 
                     db.Locations.InsertOnSubmit(locationDto);
                 }
@@ -44,7 +44,7 @@ namespace Roundtable.DAL.Location
 
                 db.SubmitChanges();
 
-                return locationDto.Id;
+                return locationDto.LocationId;
             }
         }
     }

@@ -25,7 +25,7 @@ namespace Roundtable.Services.Presenter
 
         public IPresenter GetPresenter(Guid id)
         {
-            return _presenterRetriever.GetPresenters(p => p.Id == id).FirstOrDefault();
+            return _presenterRetriever.GetPresenters(p => p.PresenterId == id).FirstOrDefault();
         }
 
         public Guid SavePresenter(IPresenter presenter)

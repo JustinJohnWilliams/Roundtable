@@ -3,7 +3,7 @@ namespace Roundtable.Contracts.Location
 {
     public interface ILocation
     {
-        Guid Id { get; }
+        Guid LocationId { get; }
         string Name { get; }
     }
 }

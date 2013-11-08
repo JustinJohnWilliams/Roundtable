@@ -9,7 +9,7 @@ namespace Roundtable.Web.ViewModels.Location
 {
     public class LocationEditViewModel: ILocation
     {
-        public Guid Id { get; set; }
+        public Guid LocationId { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Name is required")]
         public string Name { get; set; }

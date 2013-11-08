@@ -15,14 +15,14 @@ namespace Roundtable.Services.Talk
             _talkSaver = talkSaver;
         }
 
-        public List<ITalk> GetTalks()
+        public List<IDetailedTalk> GetTalks()
         {
             return _talkRetriever.GetTalks();
         }
 
-        public ITalk GetTalk(Guid id)
+        public IDetailedTalk GetTalk(Guid id)
         {
-            return _talkRetriever.GetTalks(t => t.Id == id).FirstOrDefault();
+            return _talkRetriever.GetTalks(t => t.TalkId == id).FirstOrDefault();
         }
 
         public Guid SaveTalk(ITalk talk)

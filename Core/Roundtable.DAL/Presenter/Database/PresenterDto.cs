@@ -11,8 +11,8 @@ namespace Roundtable.DAL.Presenter.Database
     [Table(Name="Presenters")]
     internal class PresenterDto: IPresenter
     {
-        [Column(IsPrimaryKey = true)]
-        public Guid Id { get; set; }
+        [Column(IsPrimaryKey = true, Name = "Id")]
+        public Guid PresenterId { get; set; }
 
         [Column]
         public string FirstName { get; set; }

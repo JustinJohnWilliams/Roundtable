@@ -8,19 +8,28 @@ using Roundtable.Contracts.Talk;
 
 namespace Roundtable.DAL.Talk.Database
 {
-    [Table(Name="Talks")]
-    internal class TalkDto: ITalk
+    [Table(Name="dbo.vw_Talks")]
+    internal class DetailedTalkDto: IDetailedTalk
     {
-        [Column(IsPrimaryKey = true, Name="Id")]
+        [Column]
         public Guid TalkId { get; set; }
-
+        
         [Column]
         public string Topic { get; set; }
         
         [Column]
         public Guid PresenterId { get; set; }
-        
+
         [Column]
         public Guid LocationId { get; set; }
+
+        [Column]
+        public string Name { get; set; }
+
+        [Column]
+        public string FirstName { get; set; }
+
+        [Column]
+        public string LastName { get; set; }
     }
 }

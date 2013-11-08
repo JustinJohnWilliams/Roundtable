@@ -46,6 +46,7 @@
     <Compile Include="Presenter\PresenterRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RtDataContext.cs" />
+    <Compile Include="Talk\Database\DetailedTalkDto.cs" />
     <Compile Include="Talk\Database\TalkDto.cs" />
     <Compile Include="Talk\TalkRepository.cs" />
   </ItemGroup>

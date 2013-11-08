@@ -5,6 +5,6 @@ namespace Roundtable.Contracts.Talk
 {
     public interface ITalkRetriever
     {
-        List<ITalk> GetTalks(Func<ITalk, bool> whereClause = null);
+        List<IDetailedTalk> GetTalks(Func<IDetailedTalk, bool> whereClause = null);
     }
 }

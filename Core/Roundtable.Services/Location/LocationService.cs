@@ -25,7 +25,7 @@ namespace Roundtable.Services.Location
 
         public ILocation GetLocation(Guid id)
         {
-            return _locationRetriever.GetLocations(l => l.Id == id).FirstOrDefault();
+            return _locationRetriever.GetLocations(l => l.LocationId == id).FirstOrDefault();
         }
 
         public Guid SaveLocation(ILocation location)

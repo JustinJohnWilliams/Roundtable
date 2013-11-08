@@ -17,11 +17,11 @@ namespace Roundtable.DAL.Talk
             _connectionString = connectionString;
         }
 
-        public List<ITalk> GetTalks(Func<ITalk, bool> whereClause = null)
+        public List<IDetailedTalk> GetTalks(Func<IDetailedTalk, bool> whereClause = null)
         {
             using (var db = new RtDataContext(_connectionString))
             {
-                var talks = whereClause == null ? db.Talks : db.Talks.Where(whereClause);
+                var talks = whereClause == null ? db.DetailedTalks : db.DetailedTalks.Where(whereClause);
 
                 return talks.ToList();
             }
@@ -31,11 +31,11 @@ namespace Roundtable.DAL.Talk
         {
             using (var db = new RtDataContext(_connectionString))
             {
-                var dto = db.Talks.FirstOrDefault(t => t.Id == talk.Id);
+                var dto = db.Talks.FirstOrDefault(t => t.TalkId == talk.TalkId);
 
-                if (dto == null || talk.Id == Guid.Empty)
+                if (dto == null || talk.TalkId == Guid.Empty)
                 {
-                    dto = new TalkDto() { Id = Guid.NewGuid() };
+                    dto = new TalkDto() { TalkId = Guid.NewGuid() };
 
                     db.Talks.InsertOnSubmit(dto);
                 }
@@ -46,7 +46,7 @@ namespace Roundtable.DAL.Talk
 
                 db.SubmitChanges();
 
-                return dto.Id;
+                return dto.TalkId;
 
             }
         }

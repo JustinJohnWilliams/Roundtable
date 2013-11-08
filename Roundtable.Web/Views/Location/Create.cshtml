@@ -7,7 +7,7 @@
 
 <div class="col-md-6">
     <form action="@Url.Action("Create")" method="POST" role="form">
-        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.LocationId)
         @Html.ValidationSummary(false, "Please correct the following and try again...", new { @class = "alert alert-danger" })
         <div class="form-group">
             <label for="LocationName">Location Name:</label>

@@ -5,8 +5,8 @@ namespace Roundtable.Contracts.Talk
 {
     public interface ITalkService
     {
-        List<ITalk> GetTalks();
-        ITalk GetTalk(Guid id);
+        List<IDetailedTalk> GetTalks();
+        IDetailedTalk GetTalk(Guid id);
         Guid SaveTalk(ITalk talk);
     }
 }

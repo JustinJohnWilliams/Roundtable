@@ -4,7 +4,7 @@ namespace Roundtable.Contracts.Talk
 {
     public interface ITalk
     {
-        Guid Id { get; }
+        Guid TalkId { get; }
         string Topic { get; }
         Guid PresenterId { get; }
         Guid LocationId { get; }

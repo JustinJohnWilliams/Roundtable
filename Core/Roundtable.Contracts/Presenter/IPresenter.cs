@@ -4,7 +4,7 @@ namespace Roundtable.Contracts.Presenter
 {
     public interface IPresenter
     {
-        Guid Id { get; }
+        Guid PresenterId { get; }
         string FirstName { get; }
         string LastName { get; }
     }

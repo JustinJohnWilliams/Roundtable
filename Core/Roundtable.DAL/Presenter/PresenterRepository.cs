@@ -21,11 +21,11 @@ namespace Roundtable.DAL.Presenter
         {
             using (var db = new RtDataContext(_connectionString))
             {
-                var dto = db.Presenters.FirstOrDefault(p => p.Id == presenter.Id);
+                var dto = db.Presenters.FirstOrDefault(p => p.PresenterId == presenter.PresenterId);
 
                 if (dto == null)
                 {
-                    dto = new PresenterDto() {Id = Guid.NewGuid() };
+                    dto = new PresenterDto() {PresenterId = Guid.NewGuid() };
 
                     db.Presenters.InsertOnSubmit(dto);
                 }
@@ -35,7 +35,7 @@ namespace Roundtable.DAL.Presenter
 
                 db.SubmitChanges();
 
-                return dto.Id;
+                return dto.PresenterId;
             }
         }
 

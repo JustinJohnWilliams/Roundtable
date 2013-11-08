@@ -20,5 +20,6 @@ namespace Roundtable.DAL
         internal Table<PresenterDto> Presenters { get { return GetTable<PresenterDto>(); } }
         internal Table<LocationDto> Locations { get { return GetTable<LocationDto>(); } }
         internal Table<TalkDto> Talks { get { return GetTable<TalkDto>(); } }
+        internal Table<DetailedTalkDto> DetailedTalks { get { return GetTable<DetailedTalkDto>(); } }
     }
 }
