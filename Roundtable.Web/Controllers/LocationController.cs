@@ -57,5 +57,38 @@ namespace Roundtable.Web.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public ActionResult Edit(Guid? id)
+        {
+            if (!id.HasValue)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var loc = _locationService.GetLocation(id.Value);
+            var vm = new LocationEditViewModel();
+
+            if (loc != null)
+            {
+                vm.Name = loc.Name;
+                vm.LocationId = loc.LocationId;
+            }
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(LocationEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                _locationService.SaveLocation(model);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
+        }
+
     }
 }

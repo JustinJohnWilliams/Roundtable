@@ -29,5 +29,11 @@ namespace Roundtable.Services.Talk
         {
             return _talkSaver.SaveTalk(talk);
         }
+
+
+        public void DeleteTalk(Guid talkId)
+        {
+            _talkSaver.DeleteTalk(talkId);
+        }
     }
 }
