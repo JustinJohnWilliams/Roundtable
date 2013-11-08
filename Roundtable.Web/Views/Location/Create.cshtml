@@ -1,0 +1,18 @@
+﻿@model Roundtable.Web.ViewModels.Location.LocationEditViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<div class="col-md-6">
+    <form action="@Url.Action("Create")" method="POST" role="form">
+        @Html.HiddenFor(m => m.Id)
+        @Html.ValidationSummary(false, "Please correct the following and try again...", new { @class = "alert alert-danger" })
+        <div class="form-group">
+            <label for="LocationName">Location Name:</label>
+            <input id="LocationName" type="text" value="" class="form-control" placeholder="Enter Location Name..." name="Name" />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

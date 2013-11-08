@@ -1,0 +1,17 @@
+﻿@model Roundtable.Web.ViewModels.Home.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Presenters</h2>
+
+<table class="table table-striped">
+  @foreach (var presenter in Model.Presenters)
+  {
+      <tr>
+          <td>@presenter.FirstName</td>
+          <td>@presenter.LastName</td>
+      </tr>
+  }
+</table>

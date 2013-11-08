@@ -1,0 +1,19 @@
+﻿@model Roundtable.Web.ViewModels.Location.LocationIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Location</h2>
+
+<a href="@Url.Action("Create")" class="btn btn-primary" style="margin-bottom: 10px"><span class="glyphicon glyphicon-plus"></span> Create Location</a>
+
+<table class="table table-striped">
+    @foreach (var loc in Model.Locations)
+    {
+        <tr>
+            <td>@loc.Name</td>
+        </tr>
+    }
+</table>
+

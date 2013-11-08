@@ -1,0 +1,10 @@
+﻿@model Roundtable.Contracts.Location.ILocation
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+Location Name: @Model.Name
+
+<a href="@Url.Action("Index")">&lt;&lt; Back to List</a>

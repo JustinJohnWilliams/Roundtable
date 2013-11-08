@@ -1,0 +1,12 @@
+﻿@model Roundtable.Web.ViewModels.Presenter.PresenterIndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Presenters</h2>
+
+@foreach (var presenter in Model.Presenters)
+{
+    @Html.DisplayFor(m => presenter, "IPresenter")
+}
