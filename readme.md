@@ -5,4 +5,3 @@
 1. Routing
 2. _Layout pages
 3. ActionResults
-..* Get/Post
