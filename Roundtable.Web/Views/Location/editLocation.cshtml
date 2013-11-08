@@ -1,0 +1,10 @@
+﻿@model Roundtable.Web.ViewModels.Location.LocationEditViewModel
+
+
+@Html.HiddenFor(m => m.LocationId)
+@Html.ValidationSummary(false, "Please correct the following and try again...", new { @class = "alert alert-danger" })
+<div class="form-group">
+    <label for="LocationName">Location Name:</label>
+    <input id="LocationName" type="text" class="form-control" placeholder="Enter Location Name..." name="Name" value="@Model.Name" />
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>

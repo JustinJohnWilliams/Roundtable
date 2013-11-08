@@ -50,5 +50,20 @@ namespace Roundtable.DAL.Talk
 
             }
         }
+
+        public void DeleteTalk(Guid talkId)
+        {
+            using (var db = new RtDataContext(_connectionString))
+            {
+                var dto = db.Talks.FirstOrDefault(t => t.TalkId == talkId);
+
+                if (dto != null)
+                {
+                    db.Talks.DeleteOnSubmit(dto);
+                    db.SubmitChanges();
+                }
+
+            }
+        }
     }
 }

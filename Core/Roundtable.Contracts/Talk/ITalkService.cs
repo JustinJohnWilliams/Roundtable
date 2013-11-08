@@ -8,5 +8,6 @@ namespace Roundtable.Contracts.Talk
         List<IDetailedTalk> GetTalks();
         IDetailedTalk GetTalk(Guid id);
         Guid SaveTalk(ITalk talk);
+        void DeleteTalk(Guid talkId);
     }
 }
